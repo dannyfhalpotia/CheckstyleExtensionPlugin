@@ -16,8 +16,16 @@
         <rule-metadata name="%NestedLoopCheck.name" internal-name="NestedLoopCheck" parent="TreeWalker">
             <alternative-name internal-name="net.sf.eclipsecs.sample.checks.NestedLoopCheck" />
             <description>%NestedLoopCheck.desc</description>
-            <property-metadata name="maxDepth" datatype="Integer" defaul-value="4">
+            <property-metadata name="maxDepth" datatype="Integer" default-value="3">
                 <description> The maximum depth of loops allowed </description>
+            </property-metadata>
+        </rule-metadata>
+        
+        <rule-metadata name="%CamelCaseCheck.name" internal-name="CamelCaseCheck" parent="TreeWalker">
+            <alternative-name internal-name="net.sf.eclipsecs.sample.checks.CamelCaseCheck" />
+            <description>%CamelCaseCheck.desc</description>
+            <property-metadata name="pattern" datatype="String" default-value="([a-z][A-Z0-9]+)+">
+                <description> The pattern to check against</description>
             </property-metadata>
         </rule-metadata>
 
