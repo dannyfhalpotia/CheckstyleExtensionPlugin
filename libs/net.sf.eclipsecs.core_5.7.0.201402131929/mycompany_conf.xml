@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.1//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
+
+<module name="Checker">
+
+  <!-- Add the TreeWalker that is required as a container for Checks -->
+  <module name="TreeWalker">
+
+    <!--
+      register our Check class twice with different
+      configurations for different tokens
+    -->
+
+    <!-- interfaces are limited to 10 methods -->
+    <module name="com.mycompany.checks.MethodLimitCheck">
+      <property name="tokens" value="INTERFACE_DEF"/>
+      <property name="max" value="10"/>
+    </module>
+
+    <!-- normal classes are limited to 25 methods -->
+    <module name="com.mycompany.checks.MethodLimitCheck">
+      <property name="tokens" value="CLASS_DEF"/>
+      <property name="max" value="15"/>
+    </module>
+	
+	<module name="com.mycompany.checks.NestedLoopCheck">
+		<property name="tokens" value="LITERAL_FOR" />
+		<property name="max" value="3" />
+		
+	</module>
+
+  </module>
+</module>
